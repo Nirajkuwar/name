@@ -1,0 +1,12 @@
+jobs:
+test: if
+  runs-on: ubuntu-latest
+  steps:
+     -uses: actions/checkout@v4
+     -run: echo "running tests"
+  deploy:
+   needs: test 
+   run-on: ubauntu-latest
+   step:
+    - run: echo "deploying (only if test passed)"
+   
